@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('images/bot11.jpg'); /* Replace 'background-image.jpg' with your actual image file */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff; /* Text color on the background */
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Background color with transparency */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Background color with transparency */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2 {
+            color: #ffffff; /* Text color inside the section */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db; /* Button color */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Button color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Login</h1>
+    </header>
+    <section>
+        <form id="loginForm" onsubmit="return login()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">  Login</button>
+        </form>
+    </section>
+    <script>
+        function login() {
+            // Implement your authentication logic here
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Example: Check if username and password are valid
+            if (username === 'admin' && password === 'password') {
+                alert('Login successful!');
+                window.location.href = 'admin.php'; // Redirect to the admin panel page
+
+                 // Redirect to the admin panel page
+                return false; // Prevent form submission
+            } else {
+                alert('Invalid username or password. Please try again.');
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
